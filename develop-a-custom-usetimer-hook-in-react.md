@@ -24,7 +24,7 @@ Here I’ve used CRA to set up a standard React app and opened it in VSCode whil
 
 Next, create a useTimer.js file in our src directory.
 
-![screenshot of code](/images/1-aczprytmsfrpffuuikgnxa.webp)
+![screenshot of code](/images/custom-usetimer-1.webp)
 
 Here is a detailed explanation of our hook:
 
@@ -60,7 +60,7 @@ We then move on to returning these functions and states so defined.
 
 ## Using the Hook
 
-![](/images/1-cn3bcqe15qnx0xw5j3r25w.webp)
+![](/images/custom-usetimer-2.webp)
 
 Using the hook is pretty simple. Simply extract our start, clear functions, and the countdown state from our useTimer hook, using destructuring.
 
