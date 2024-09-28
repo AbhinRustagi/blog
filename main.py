@@ -3,6 +3,7 @@ import yaml
 import json
 import markdown
 import requests
+from slugify import slugify
 
 MONTHS = {
     "01": "January",
@@ -142,13 +143,15 @@ def main():
 
     promises = []
 
-    for post in diff:
+    for index, post in enumerate(diff):
         metadata, content = parse_markdown(post["path"])
+        slug = slugify(metadata.get("title"))
+        diff[index]["slug"] = slug
         data = {
             "title": metadata.get("title"),
             "content": content,
             "tags": metadata.get("tags"),
-            "canonical_url": PERSONAL_WEBSITE + "blog/" + metadata.get("slug"),
+            "canonical_url": PERSONAL_WEBSITE + "blog/" + slug,
         }
 
         promises.append(post_to_medium(data))
@@ -170,7 +173,7 @@ def main():
 
             indexed_posts[year][month].append(post)
         
-        json.dump(indexed_posts, f, indent=2)
+        json.dump(indexed_posts, f, indent=2, ensure_ascii=False,)
         print("index.json has been updated")
 
     generate_and_save_readme(indexed_posts)
