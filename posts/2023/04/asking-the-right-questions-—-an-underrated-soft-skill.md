@@ -1,6 +1,6 @@
 ---
 title: Asking the right questions — an underrated soft skill
-publishDate: 2023-04-30T01:00:00.000Z
+date: 2023-04-30T01:00:00.000Z
 readingTime: 2
 tags:
   - Product Development

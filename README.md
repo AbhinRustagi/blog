@@ -4,13 +4,13 @@ A blog about software development and other things. I use this repository as a s
 
 ## 2023
 
-### April
-
-- [Asking the right questions — an underrated soft skill](posts/2023/04/asking-the-right-questions-—-an-underrated-soft-skill.md)
-
 ### September
 
 - [Insights as a 22yo Software Engineer](posts/2023/09/insights-as-a-22yo-software-engineer.md)
+
+### April
+
+- [Asking the right questions — an underrated soft skill](posts/2023/04/asking-the-right-questions-—-an-underrated-soft-skill.md)
 
 ## 2022
 

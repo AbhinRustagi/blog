@@ -1,6 +1,6 @@
 ---
 title: Why is reading the documentation so important?
-publishDate: 2021-11-17T03:31:00.000Z
+date: 2021-11-17T03:31:00.000Z
 readingTime: 4
 tags:
   - Software Development
