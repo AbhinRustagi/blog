@@ -1,17 +1,14 @@
 name: Post to Platforms
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - closed
   # Trigger Manually
   workflow_dispatch:
 
 jobs:
   run-script:
-    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
 
     steps:
