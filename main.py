@@ -1,8 +1,8 @@
 import os
+import yaml
 import json
 import markdown
 import requests
-import yaml
 
 MONTHS = {
     "01": "January",
