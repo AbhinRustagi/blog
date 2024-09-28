@@ -89,7 +89,7 @@ def generate_and_save_readme(files: dict):
             readme_content += f'### {MONTHS[month]}\n\n'
 
             for post in files[year][month]:
-                readme_content += f'- [{post.get('title')}]({post.get('path')})\n\n'
+                readme_content += f'[{post.get("title")}]({post.get("path")})\n\n'
 
         readme_content += '\n'
 
