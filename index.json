@@ -1,0 +1,40 @@
+{
+  "2021": {
+    "11": [
+      {
+        "title": "Why is reading the documentation so important?",
+        "path": "posts/2021/11/why-is-reading-the-documentation-so-important.md",
+        "canonicalUrl": null,
+        "description": null
+      }
+    ]
+  },
+  "2022": {
+    "01": [
+      {
+        "title": "Develop a Custom useTimer Hook in React",
+        "path": "posts/2022/01/develop-a-custom-usetimer-hook-in-react.md",
+        "canonicalUrl": null,
+        "description": null
+      }
+    ]
+  },
+  "2023": {
+    "04": [
+      {
+        "title": "Asking the right questions — an underrated soft skill",
+        "path": "posts/2023/04/asking-the-right-questions-—-an-underrated-soft-skill.md",
+        "canonicalUrl": null,
+        "description": null
+      }
+    ],
+    "09": [
+      {
+        "title": "Insights as a 22yo Software Engineer",
+        "path": "posts/2023/09/insights-as-a-22yo-software-engineer.md",
+        "canonicalUrl": null,
+        "description": null
+      }
+    ]
+  }
+}

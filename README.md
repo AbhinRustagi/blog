@@ -23,4 +23,3 @@ A blog about software development and other things. I use this repository as a s
 ### November
 
 - [Why is reading the documentation so important?](posts/2021/11/why-is-reading-the-documentation-so-important.md)
-
