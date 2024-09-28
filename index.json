@@ -48,18 +48,5 @@
         "path": "posts/2021/11/why-is-reading-the-documentation-so-important.md"
       }
     ]
-  },
-  "2024": {
-    "09": [
-      {
-        "title": "Testing the Workflow",
-        "date": "2024-09-29",
-        "canonical_url": null,
-        "description": null,
-        "medium": null,
-        "devto": null,
-        "path": "posts/2024/09/Test.md"
-      }
-    ]
   }
 }

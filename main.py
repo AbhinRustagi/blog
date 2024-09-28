@@ -20,6 +20,12 @@ MONTHS = {
 }
 
 
+MEDIUM_BASE_URL = "https://api.medium.com/v1/"
+MEDIUM_USER_ID = os.environ.get("MEDIUM_USER_ID")
+MEDIUM_TOKEN = os.environ.get("MEDIUM_TOKEN")
+PERSONAL_WEBSITE = "https://www.abhin.dev/"
+
+
 def parse_markdown(file_path):
     # Open and read the markdown file
     with open(file_path, 'r') as f:
@@ -58,11 +64,8 @@ def discover_posts(dir):
                 frontmatter, _ = parse_markdown(os.path.join(postPath, post))
                 data = {
                     "title": frontmatter.get("title"),
-                    "date": frontmatter.get("publishDate").strftime("%Y-%m-%d"),
-                    "canonical_url": frontmatter.get("canonical_url"),
+                    "date": frontmatter.get("date").strftime("%Y-%m-%d"),
                     "description": frontmatter.get("description"),
-                    "medium": frontmatter.get("medium"),
-                    "devto": frontmatter.get("devto"),
                     "path": os.path.join(postPath, post),
                 }
                 yearPosts[month].append(data)
@@ -72,7 +75,7 @@ def discover_posts(dir):
 
 
 README_TITLE = "# Blog"
-README_DESCRIPTION = '''A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [dev.to](https://dev.to/abhinrustagi) and [Medium](https://www.medium.com/@abhinr).'''
+README_DESCRIPTION = '''A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).'''
 
 
 def generate_and_save_readme(files: dict):
@@ -93,49 +96,13 @@ def generate_and_save_readme(files: dict):
     open("README.md", "w", encoding="utf-8").write(readme_content)
 
 
-DEVTO_BASE_URL = "https://dev.to/api/articles";
-DEVTO_API_KEY = os.environ.get("DEV_TO_API_KEY")
-
-def post_to_devto(post):
-    title = post["title"]
-    content = post["content"]
-    tags = post["tags"]
-    canonical_url = post["canonical_url"]
-
-    url = DEVTO_BASE_URL
-
-    data = {
-        "article": {
-            "title": title,
-            "body_markdown": content,
-            "tags": tags,
-            "canonical_url": canonical_url
-        }
-    }
-
-    response = requests.post(url, headers={
-        "api-key": DEVTO_API_KEY,
-        "Content-Type": "application/json"
-    }, json=data, timeout=10)
-
-    return response.json()
-
-MEDIUM_BASE_URL = "https://api.medium.com/v1/"
-MEDIUM_USER_ID = os.environ.get("MEDIUM_USER_ID")
-MEDIUM_TOKEN = os.environ.get("MEDIUM_TOKEN")
-
 def post_to_medium(post):
-    title = post["title"]
-    content = post["content"]
-    tags = post["tags"]
-    canonical_url = post["canonical_url"]
-
     data = {
-        "title": title,
+        "title": post["title"],
         "contentFormat": "markdown",
-        "content": content,
-        "tags": tags,
-        "canonical_url": canonical_url
+        "content": post["content"],
+        "tags": post["tags"],
+        "canonical_url": post["canonical_url"]
     }
 
     url = MEDIUM_BASE_URL + "users/" + MEDIUM_USER_ID + "/posts"
@@ -176,28 +143,20 @@ def main():
     promises = []
 
     for post in diff:
-        metadata, _ = parse_markdown(post["path"])
+        metadata, content = parse_markdown(post["path"])
         data = {
             "title": metadata.get("title"),
-            "content": metadata.get("content"),
+            "content": content,
             "tags": metadata.get("tags"),
-            "canonical_url": metadata.get("canonical_url"),
+            "canonical_url": PERSONAL_WEBSITE + "blog/" + metadata.get("slug"),
         }
 
         promises.append(post_to_medium(data))
-        promises.append(post_to_devto(data))
 
-    # responses = [promise.result() for promise in promises]
-
-    # for index, response in enumerate(responses):
-    #     if index % 2 == 0:
-    #         diff[index // 2]["medium"] = response.get("data", {}).get("url")
-    #     else:
-    #         diff[index // 2]["devto"] = response.get("url")
+    for index, response in enumerate(promises):
+        diff[index]["medium"] = response.get("data", {}).get("url")
 
     with open("index.json", "w") as f:
-        
-        
         for post in diff:
             year = post["date"][0:4]
             month = post["date"][5:7]

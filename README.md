@@ -2,12 +2,6 @@
 
 A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [dev.to](https://dev.to/abhinrustagi) and [Medium](https://www.medium.com/@abhinr).
 
-## 2024
-
-### September
-
-- [Testing the Workflow](posts/2024/09/Test.md)
-
 ## 2023
 
 ### September

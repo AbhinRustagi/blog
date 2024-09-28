@@ -1,6 +1,6 @@
 ---
 title: Develop a Custom useTimer Hook in React
-publishDate: 2022-01-23T13:00:00.000Z
+date: 2022-01-23T13:00:00.000Z
 readingTime: 2
 tags:
   - React

@@ -1,6 +1,6 @@
 ---
 title: Insights as a 22yo Software Engineer
-publishDate: 2023-09-26T02:00:00.000Z
+date: 2023-09-26T02:00:00.000Z
 readingTime: 5
 tags:
   - React
