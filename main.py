@@ -1,6 +1,6 @@
 import os
-import yaml
 import json
+import yaml
 import markdown
 import requests
 from slugify import slugify
@@ -28,8 +28,11 @@ PERSONAL_WEBSITE = "https://www.abhin.dev/"
 
 
 def parse_markdown(file_path):
+    '''
+    Parse a markdown file and return the metadata and HTML content.
+    '''
     # Open and read the markdown file
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
     # Separate metadata and markdown content
@@ -51,36 +54,44 @@ def parse_markdown(file_path):
     return metadata, html_content
 
 
-def discover_posts(dir):
+def discover_posts(directory):
+    '''
+    Discover all posts in the given directory and return them as a dictionary.
+    '''
     files = {}
 
-    for year in os.listdir(dir):
-        monthPath = os.path.join(dir, year)
-        yearPosts = {}
+    for year in os.listdir(directory):
+        month_path = os.path.join(directory, year)
+        year_posts = {}
 
-        for month in os.listdir(monthPath):
-            postPath = os.path.join(monthPath, month)
-            yearPosts[month] = []
-            for post in os.listdir(postPath):
-                frontmatter, _ = parse_markdown(os.path.join(postPath, post))
+        for month in os.listdir(month_path):
+            post_path = os.path.join(month_path, month)
+            year_posts[month] = []
+            for post in os.listdir(post_path):
+                frontmatter, _ = parse_markdown(os.path.join(post_path, post))
                 data = {
                     "title": frontmatter.get("title"),
                     "date": frontmatter.get("date").strftime("%Y-%m-%d"),
                     "description": frontmatter.get("description"),
-                    "path": os.path.join(postPath, post),
+                    "path": os.path.join(post_path, post),
                 }
-                yearPosts[month].append(data)
-        files[year] = yearPosts
+                year_posts[month].append(data)
+        files[year] = year_posts
 
     return files
 
 
-README_TITLE = "# Blog"
-README_DESCRIPTION = '''A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).'''
-
-
 def generate_and_save_readme(files: dict):
-    readme_content = f'{README_TITLE}\n\n{README_DESCRIPTION}\n\n'
+    '''
+    Generate a README.md file with the given posts and save it.
+    '''
+    readme_title = "# Blog"
+    readme_description = '''
+    A blog about software development and other things.
+     I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/),
+     and for automatic deploys to [Medium](https://www.medium.com/@abhinr).'''
+
+    readme_content = f'{readme_title}\n\n{readme_description}\n\n'
     years = sorted(files.keys(), reverse=True)
 
     for year in years:
@@ -94,10 +105,14 @@ def generate_and_save_readme(files: dict):
 
         readme_content += '\n'
 
-    open("README.md", "w", encoding="utf-8").write(readme_content)
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(readme_content)
 
 
 def post_to_medium(post):
+    '''
+    Post a blog post to Medium.
+    '''
     data = {
         "title": post["title"],
         "contentFormat": "markdown",
@@ -116,6 +131,9 @@ def post_to_medium(post):
 
 
 def recursive_unwrap_index(index, posts):
+    '''
+    Unwrap the index.json file into a flat list of posts.
+    '''
     for key in index:
         if isinstance(index[key], list):
             posts.extend(index[key])
@@ -125,9 +143,13 @@ def recursive_unwrap_index(index, posts):
 
 
 def main():
+    '''
+    Main function to discover new posts, post them to Medium, and update the index and README.
+    '''
     available_posts = discover_posts("posts")
     available_posts = recursive_unwrap_index(available_posts, [])
-    indexed_posts = json.loads(open("index.json", "r").read())
+    indexed_posts = json.loads(
+        open("index.json", "r", encoding='utf-8').read())
     indexed_posts_flattened = recursive_unwrap_index(indexed_posts, [])
 
     diff = set(post["title"] for post in available_posts).difference(
@@ -159,7 +181,7 @@ def main():
     for index, response in enumerate(promises):
         diff[index]["medium"] = response.get("data", {}).get("url")
 
-    with open("index.json", "w") as f:
+    with open("index.json", "w", encoding='utf-8') as f:
         for post in diff:
             year = post["date"][0:4]
             month = post["date"][5:7]
@@ -172,11 +194,12 @@ def main():
                 indexed_posts[year][month] = []
 
             indexed_posts[year][month].append(post)
-        
+
         json.dump(indexed_posts, f, indent=2, ensure_ascii=False,)
         print("index.json has been updated")
 
     generate_and_save_readme(indexed_posts)
     print("README.md has been updated")
+
 
 main()
