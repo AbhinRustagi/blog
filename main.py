@@ -21,6 +21,10 @@ MONTHS = {
 }
 
 
+PLATFORM_MEDIUM = "medium"
+PLATFORM_DEV_TO = "dev.to"
+
+
 MEDIUM_BASE_URL = "https://api.medium.com/v1/"
 MEDIUM_USER_ID = os.environ.get("MEDIUM_USER_ID")
 MEDIUM_TOKEN = os.environ.get("MEDIUM_TOKEN")
@@ -45,7 +49,7 @@ def parse_markdown(file_path):
         # Parse metadata as YAML
         metadata = yaml.safe_load(metadata_raw)
     else:
-        metadata = None
+        metadata = {}
         markdown_content = content
 
     # Convert markdown content to HTML
@@ -74,6 +78,7 @@ def discover_posts(directory):
                     "date": frontmatter.get("date").strftime("%Y-%m-%d"),
                     "description": frontmatter.get("description"),
                     "path": os.path.join(post_path, post),
+                    "platforms": frontmatter.get("platforms")
                 }
                 year_posts[month].append(data)
         files[year] = year_posts
@@ -142,6 +147,28 @@ def recursive_unwrap_index(index, posts):
     return posts
 
 
+def post_to_platforms(posts):
+    promises = []
+
+    for index, post in enumerate(diff):
+        metadata, content = parse_markdown(post["path"])
+        slug = slugify(metadata.get("title"))
+        diff[index]["slug"] = slug
+        data = {
+            "title": metadata.get("title"),
+            "content": content,
+            "tags": metadata.get("tags"),
+            "canonical_url": PERSONAL_WEBSITE + "blog/" + slug,
+        }
+
+        platforms = metadata.get("platforms", [])
+        for platform in platforms:
+            if platform == PLATFORM_MEDIUM:
+                promises.append(post_to_medium(data))
+
+    return promises
+
+
 def main():
     '''
     Main function to discover new posts, post them to Medium, and update the index and README.
@@ -163,23 +190,10 @@ def main():
 
     diff = [post for post in available_posts if post["title"] in diff]
 
-    promises = []
-
-    for index, post in enumerate(diff):
-        metadata, content = parse_markdown(post["path"])
-        slug = slugify(metadata.get("title"))
-        diff[index]["slug"] = slug
-        data = {
-            "title": metadata.get("title"),
-            "content": content,
-            "tags": metadata.get("tags"),
-            "canonical_url": PERSONAL_WEBSITE + "blog/" + slug,
-        }
-
-        promises.append(post_to_medium(data))
-
-    for index, response in enumerate(promises):
-        diff[index]["medium"] = response.get("data", {}).get("url")
+    if any(len(post.get("platforms", [])) > 0 for post in diff):
+        promises = post_to_platforms(diff)
+        for index, response in enumerate(promises):
+            diff[index]["medium"] = response.get("data", {}).get("url")
 
     with open("index.json", "w", encoding='utf-8') as f:
         for post in diff:
