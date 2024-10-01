@@ -80,8 +80,7 @@ def generate_and_save_readme(files: dict):
                 line += f'[[Website]]({post.canonical_url})'
                 if PLATFORM_MEDIUM in post.platform_names:
                     index = post.platform_names.index(PLATFORM_MEDIUM)
-                    line += f'[[Medium]]({post.platforms[index]
-                                          [PLATFORM_MEDIUM]})'
+                    line += f'[[Medium]]({post.platforms[index][PLATFORM_MEDIUM]})'
                 line += '\n\n'
                 readme_content += line
 
