@@ -1,10 +1,16 @@
 ---
 title: Why is reading the documentation so important?
 date: 2021-11-17T03:31:00.000Z
-readingTime: 4
+canonical_url: https://www.abhin.dev/blog/why-is-reading-the-documentation-so-important
+description:
+reading_time: 4
+slug: why-is-reading-the-documentation-so-important
+published: True
 tags:
   - Software Development
   - Product
+platforms:
+  - Medium: https://javascript.plainenglish.io/why-is-reading-the-documentation-so-important-5cf50bab0c9f
 ---
 
 Quite often the process of writing code (especially while using a certain library) goes like this: _write code, encounter error, modify code, encounter error, go to StackOverflow, copy code, run code, repeat._

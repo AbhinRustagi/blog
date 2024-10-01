@@ -1,10 +1,16 @@
 ---
 title: Asking the right questions — an underrated soft skill
 date: 2023-04-30T01:00:00.000Z
-readingTime: 2
+canonical_url: https://www.abhin.dev/blog/asking-the-right-questions-—-an-underrated-soft-skill
+description:
+reading_time: 2
+slug: asking-the-right-questions-—-an-underrated-soft-skill
+published: True
 tags:
   - Product Development
   - Startup
+platforms:
+  - Medium: https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013
 ---
 
 I recently completed my first full-time job as a Product Engineer at Openhouse, an early-stage startup based in Bangalore. Throughout my tenure, I had the opportunity to work with experienced and knowledgeable professionals, which taught me an important lesson — to solve a problem effectively, one must first ask the right questions.
