@@ -64,8 +64,9 @@ def generate_and_save_index(files: List[Post]):
     '''
     Generate an index.json file with the given posts and save it.
     '''
-    with open("index.json", "w", encoding="utf-16") as f:
-        json.dump([post.index_data() for post in files], f, ensure_ascii=False, indent=2)
+    with open("index.json", "w", encoding="utf-8") as f:
+        json.dump([post.index_data()
+                  for post in files], f, ensure_ascii=False, indent=2)
         print("index.json has been updated")
 
 
@@ -91,7 +92,8 @@ def generate_and_save_readme(files: dict):
                 line += f'[[Website]]({post.canonical_url})'
                 if PLATFORM_MEDIUM in post.platform_names:
                     index = post.platform_names.index(PLATFORM_MEDIUM)
-                    line += f'[[Medium]]({post.platforms[index][PLATFORM_MEDIUM]})'
+                    line += f'[[Medium]]({post.platforms[index]
+                                          [PLATFORM_MEDIUM]})'
                 line += '\n\n'
                 readme_content += line
 
@@ -121,7 +123,8 @@ def main():
     available_posts = discover_posts("posts")
     available_posts_flattened = recursive_unwrap_index(available_posts, [])
 
-    unpublished_posts = [post for post in available_posts_flattened if not post.published]
+    unpublished_posts = [
+        post for post in available_posts_flattened if not post.published]
 
     if len(unpublished_posts) == 0:
         print("No new posts to post")
@@ -131,7 +134,8 @@ def main():
         print(f"New post found: {post.title}")
         post.publish()
         # replace the post with the updated version
-        available_posts_flattened = [post if p == post else p for p in available_posts_flattened]
+        available_posts_flattened = [
+            post if p == post else p for p in available_posts_flattened]
 
     generate_and_save_readme(available_posts)
     generate_and_save_index(available_posts_flattened)
