@@ -52,10 +52,10 @@ class Post:
         }
 
     def __eq__(self, value) -> bool:
-        return self.title == value.title
+        return self.title == value.title and self.date == value.date and self.slug == value.slug
 
     def __ne__(self, value):
-        return self.title != value.title
+        return self.title != value.title or self.date != value.date or self.slug != value.slug
 
     def file_repr(self):
         '''
@@ -129,3 +129,14 @@ class Post:
         else:
             print(response.json())
             response.raise_for_status()
+
+    def index_data(self):
+        '''
+        Return the data to be stored in the index.json file
+        '''
+        return {
+            "title": self.title,
+            "date": self.date.strftime("%Y-%m-%d"),
+            "slug": self.slug,
+            "path": self.path,
+        }

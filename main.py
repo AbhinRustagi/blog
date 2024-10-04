@@ -1,4 +1,6 @@
+import json
 import os
+from typing import List
 
 import markdown
 import yaml
@@ -58,6 +60,15 @@ def discover_posts(directory):
     return files
 
 
+def generate_and_save_index(files: List[Post]):
+    '''
+    Generate an index.json file with the given posts and save it.
+    '''
+    with open("index.json", "w", encoding="utf-16") as f:
+        json.dump([post.index_data() for post in files], f, ensure_ascii=False, indent=2)
+        print("index.json has been updated")
+
+
 def generate_and_save_readme(files: dict):
     '''
     Generate a README.md file with the given posts and save it.
@@ -110,8 +121,7 @@ def main():
     available_posts = discover_posts("posts")
     available_posts_flattened = recursive_unwrap_index(available_posts, [])
 
-    unpublished_posts = [
-        post for post in available_posts_flattened if not post.published]
+    unpublished_posts = [post for post in available_posts_flattened if not post.published]
 
     if len(unpublished_posts) == 0:
         print("No new posts to post")
@@ -120,8 +130,11 @@ def main():
     for post in unpublished_posts:
         print(f"New post found: {post.title}")
         post.publish()
+        # replace the post with the updated version
+        available_posts_flattened = [post if p == post else p for p in available_posts_flattened]
 
     generate_and_save_readme(available_posts)
+    generate_and_save_index(available_posts_flattened)
 
 
 main()
