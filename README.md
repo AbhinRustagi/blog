@@ -2,6 +2,13 @@
 
 A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
 
+## 2024
+
+### November
+
+- How I think ChatGPT & Claude might be derailing the next batch of academics [[Markdown]](posts/2024/11/chatgpt-claude-derailed-semester.md)[[Website]](https://www.abhin.dev/blog/how-i-think-chatgpt-claude-might-be-derailing-the-next-batch-of-academics)
+
+
 ## 2023
 
 ### September
