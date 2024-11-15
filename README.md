@@ -2,6 +2,13 @@
 
 A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
 
+## 2024
+
+### November
+
+- How I think ChatGPT & Claude might be derailing the next batch of academics [[Markdown]](posts/2024/11/chatgpt-claude-derailed-semester.md)[[Website]](https://www.abhin.dev/blog/chatgpt-claude-derailed-semester)
+
+
 ## 2023
 
 ### September
@@ -12,14 +19,18 @@ A blog about software development and other things. I use this repository as a s
 
 - Asking the right questions — an underrated soft skill [[Markdown]](posts/2023/04/asking-the-right-questions-—-an-underrated-soft-skill.md)[[Website]](https://www.abhin.dev/blog/asking-the-right-questions-—-an-underrated-soft-skill)[[Medium]](https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013)
 
+
 ## 2022
 
 ### January
 
 - Develop a Custom useTimer Hook in React [[Markdown]](posts/2022/01/develop-a-custom-usetimer-hook-in-react.md)[[Website]](https://www.abhin.dev/blog/develop-a-custom-usetimer-hook-in-react)[[Medium]](https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24)
 
+
 ## 2021
 
 ### November
 
 - Why is reading the documentation so important? [[Markdown]](posts/2021/11/why-is-reading-the-documentation-so-important.md)[[Website]](https://www.abhin.dev/blog/why-is-reading-the-documentation-so-important)[[Medium]](https://javascript.plainenglish.io/why-is-reading-the-documentation-so-important-5cf50bab0c9f)
+
+
