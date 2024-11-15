@@ -2,7 +2,6 @@ import json
 import os
 from typing import List
 
-import markdown
 import yaml
 
 from lib import MONTHS, Post
@@ -30,10 +29,7 @@ def parse_markdown(file_path):
         metadata = {}
         markdown_content = content
 
-    # Convert markdown content to HTML
-    html_content = markdown.markdown(markdown_content)
-
-    return metadata, html_content
+    return metadata, markdown_content
 
 
 def discover_posts(directory):
@@ -51,9 +47,9 @@ def discover_posts(directory):
             year_posts[month] = []
             for post_file in os.listdir(post_path):
                 post_path = os.path.join(post_path, post_file)
-                frontmatter, _ = parse_markdown(post_path)
+                frontmatter, content = parse_markdown(post_path)
                 frontmatter["path"] = post_path
-                post = Post(frontmatter, _)
+                post = Post(frontmatter, content)
                 year_posts[month].append(post)
         files[year] = year_posts
 

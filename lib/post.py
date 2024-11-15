@@ -13,17 +13,17 @@ class Post:
     '''
 
     def __init__(self, metadata, content):
+        print(metadata)
         self.title = metadata.get("title")
         self.date = metadata.get("date", datetime.now())
         self.description = metadata.get("description", "")
         self.tags = metadata.get("tags", [])
         self.reading_time = metadata.get("reading_time", 0)
         # Populated for new posts automatically
-        self.slug = metadata.get("slug", slugify(self.title))
+        self.slug = metadata.get("path").split("/")[-1].replace(".md", "")
         self.canonical_url = metadata.get(
             "canonical_url", PERSONAL_WEBSITE + "blog/" + self.slug)
-        self.platforms = metadata.get(
-            "platforms", [])
+        self.platforms = metadata.get("platforms", [])
         self.platform_names = []
         for platform in self.platforms:
             self.platform_names.extend(platform.keys())
