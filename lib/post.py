@@ -69,13 +69,15 @@ class Post:
         file_repr += f"reading_time: {self.reading_time}\n"
         file_repr += f"slug: {self.slug}\n"
         file_repr += f"published: {self.published}\n"
-        file_repr += "tags:\n"
-        for tag in self.tags:
-            file_repr += f"  - {tag}\n"
-        file_repr += "platforms:\n"
-        for platform in self.platforms:
-            for name, link in platform.items():
-                file_repr += f"  - {name}: {link}\n"
+        if self.tags:
+            file_repr += "tags:\n"
+            for tag in self.tags:
+                file_repr += f"  - {tag}\n"
+        if self.platforms:
+            file_repr += "platforms:\n"
+            for platform in self.platforms:
+                for name, link in platform.items():
+                    file_repr += f"  - {name}: {link}\n"
         file_repr += "---\n"
         file_repr += f"{self.content}"
         return file_repr
