@@ -1,10 +1,10 @@
 ---
 title: Asking the right questions — an underrated soft skill
 date: 2023-04-30T01:00:00.000Z
-canonical_url: https://www.abhin.dev/blog/asking-the-right-questions-—-an-underrated-soft-skill
+canonical_url: https://www.abhin.dev/blog/asking-the-right-questions
 description:
 reading_time: 2
-slug: asking-the-right-questions-—-an-underrated-soft-skill
+slug: asking-the-right-questions
 published: True
 tags:
   - Product Development

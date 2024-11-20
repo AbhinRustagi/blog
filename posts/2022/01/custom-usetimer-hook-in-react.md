@@ -1,10 +1,10 @@
 ---
 title: Develop a Custom useTimer Hook in React
 date: 2022-01-23T13:00:00.000Z
-canonical_url: https://www.abhin.dev/blog/develop-a-custom-usetimer-hook-in-react
+canonical_url: https://www.abhin.dev/blog/custom-usetimer-hook-in-react
 description:
 reading_time: 2
-slug: develop-a-custom-usetimer-hook-in-react
+slug: custom-usetimer-hook-in-react
 published: True
 tags:
   - React
