@@ -11,7 +11,7 @@
       "LLMs"
     ],
     "reading_time": 2,
-    "platforms": [],
+    "medium": null,
     "published": true
   },
   {
@@ -28,11 +28,7 @@
       "Software Development"
     ],
     "reading_time": 5,
-    "platforms": [
-      {
-        "Medium": "https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b"
-      }
-    ],
+    "medium": "https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b",
     "published": true
   },
   {
@@ -46,11 +42,7 @@
       "Startup"
     ],
     "reading_time": 2,
-    "platforms": [
-      {
-        "Medium": "https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013"
-      }
-    ],
+    "medium": "https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013",
     "published": true
   },
   {
@@ -64,11 +56,7 @@
       "Frontend Development"
     ],
     "reading_time": 2,
-    "platforms": [
-      {
-        "Medium": "https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24"
-      }
-    ],
+    "medium": "https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24",
     "published": true
   },
   {
@@ -82,11 +70,7 @@
       "Product"
     ],
     "reading_time": 4,
-    "platforms": [
-      {
-        "Medium": "https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f"
-      }
-    ],
+    "medium": "https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f",
     "published": true
   }
 ]

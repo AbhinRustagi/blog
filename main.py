@@ -87,9 +87,8 @@ def generate_and_save_readme(files: dict):
                 line = f'- {post.title} '
                 line += f'[[Markdown]]({post.path})'
                 line += f'[[Website]]({post.canonical_url})'
-                if PLATFORM_MEDIUM in post.platform_names:
-                    index = post.platform_names.index(PLATFORM_MEDIUM)
-                    line += f'[[Medium]]({post.platforms[index][PLATFORM_MEDIUM]})'
+                if post.medium:
+                    line += f'[[Medium]]({post.medium})'
                 line += '\n\n'
                 readme_content += line
 
@@ -112,7 +111,7 @@ def recursive_unwrap_index(index, posts):
     return posts
 
 
-def publish_new_posts(posts, available_posts_flattened):
+def publish_new_posts(posts: list[Post], available_posts_flattened):
     '''
     Publish new posts to Medium and update the available posts list.
     '''

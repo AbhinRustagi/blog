@@ -9,8 +9,7 @@ published: True
 tags:
   - React
   - Frontend Development
-platforms:
-  - Medium: https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24
+medium: https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24
 ---
 
 Timers are essential elements to several applications out there like Productivity Apps, Games, Task Management Apps, and many more. I’ve put forth a small example to create a custom useTimer Hook for React Applications to responsibly get around the mischievous setInterval/setTimeout function in JavaScript.

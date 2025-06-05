@@ -12,8 +12,7 @@ tags:
   - Django
   - Startups
   - Software Development
-platforms:
-  - Medium: https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b
+medium: https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b
 ---
 
 I’m Abhin, a 22-year-old developer from New Delhi, India. I am a JavaScript (+Typescript) and Django developer. I have been writing full-stack code for over 2 years now. Programming for me has been an outlet that challenges me, annoys me, and manages to keep me on my toes. I recently read an article from [Lydia Hallie](https://medium.com/@lydiahallie/advice-from-a-19-y-o-girl-software-developer-88737bcc6be5) where she shared her insights and advice as a (then) 19-year-old software developer and it convinced me to write one of my own.

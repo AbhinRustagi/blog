@@ -9,8 +9,7 @@ published: True
 tags:
   - Software Development
   - Product
-platforms:
-  - Medium: https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f
+medium: https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f
 ---
 
 Quite often the process of writing code (especially while using a certain library) goes like this: _write code, encounter error, modify code, encounter error, go to StackOverflow, copy code, run code, repeat._
