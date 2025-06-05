@@ -3,30 +3,77 @@
     "title": "How I think ChatGPT & Claude might be derailing the next batch of academics",
     "date": "2024-11-15",
     "slug": "chatgpt-claude-derailed-semester",
-    "path": "posts/2024/11/chatgpt-claude-derailed-semester.md"
-  },
-  {
-    "title": "Why is reading the documentation so important?",
-    "date": "2021-11-17",
-    "slug": "reading-the-documentation-important",
-    "path": "posts/2021/11/reading-the-documentation-important.md"
-  },
-  {
-    "title": "Develop a Custom useTimer Hook in React",
-    "date": "2022-01-23",
-    "slug": "custom-usetimer-hook-in-react",
-    "path": "posts/2022/01/custom-usetimer-hook-in-react.md"
+    "path": "posts/2024/11/chatgpt-claude-derailed-semester.md",
+    "canonical_url": "https://www.abhin.dev/blog/chatgpt-claude-derailed-semester",
+    "tags": ["ChatGPT", "Claude", "LLMs"],
+    "reading_time": 2,
+    "platforms": [],
+    "published": true
   },
   {
     "title": "Insights as a 22yo Software Engineer",
     "date": "2023-09-26",
     "slug": "insights-as-a-22yo-software-engineer",
-    "path": "posts/2023/09/insights-as-a-22yo-software-engineer.md"
+    "path": "posts/2023/09/insights-as-a-22yo-software-engineer.md",
+    "canonical_url": "https://www.abhin.dev/blog/insights-as-a-22yo-software-engineer",
+    "tags": [
+      "React",
+      "Javascript",
+      "Django",
+      "Startups",
+      "Software Development"
+    ],
+    "reading_time": 5,
+    "platforms": [
+      {
+        "Medium": "https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b"
+      }
+    ],
+    "published": true
   },
   {
     "title": "Asking the right questions — an underrated soft skill",
     "date": "2023-04-30",
     "slug": "asking-the-right-questions",
-    "path": "posts/2023/04/asking-the-right-questions.md"
+    "path": "posts/2023/04/asking-the-right-questions.md",
+    "canonical_url": "https://www.abhin.dev/blog/asking-the-right-questions",
+    "tags": ["Product Development", "Startup"],
+    "reading_time": 2,
+    "platforms": [
+      {
+        "Medium": "https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013"
+      }
+    ],
+    "published": true
+  },
+  {
+    "title": "Develop a Custom useTimer Hook in React",
+    "date": "2022-01-23",
+    "slug": "custom-usetimer-hook-in-react",
+    "path": "posts/2022/01/custom-usetimer-hook-in-react.md",
+    "canonical_url": "https://www.abhin.dev/blog/custom-usetimer-hook-in-react",
+    "tags": ["React", "Frontend Development"],
+    "reading_time": 2,
+    "platforms": [
+      {
+        "Medium": "https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24"
+      }
+    ],
+    "published": true
+  },
+  {
+    "title": "Why is reading the documentation so important?",
+    "date": "2021-11-17",
+    "slug": "reading-the-documentation-important",
+    "path": "posts/2021/11/reading-the-documentation-important.md",
+    "canonical_url": "https://www.abhin.dev/blog/reading-the-documentation-important",
+    "tags": ["Software Development", "Product"],
+    "reading_time": 4,
+    "platforms": [
+      {
+        "Medium": "https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f"
+      }
+    ],
+    "published": true
   }
 ]

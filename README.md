@@ -1,6 +1,6 @@
 # Blog
 
-A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
+A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/blog), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
 
 ## 2024
 
@@ -28,4 +28,4 @@ A blog about software development and other things. I use this repository as a s
 
 ### November
 
-- Why is reading the documentation so important? [[Markdown]](posts/2021/11/reading-the-documentation-important.md)[[Website]](https://www.abhin.dev/blog/reading-the-documentation-important)[[Medium]](https://javascript.plainenglish.io/why-is-reading-the-documentation-so-important-5cf50bab0c9f)
+- Why is reading the documentation so important? [[Markdown]](posts/2021/11/reading-the-documentation-important.md)[[Website]](https://www.abhin.dev/blog/reading-the-documentation-important)[[Medium]](https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f)

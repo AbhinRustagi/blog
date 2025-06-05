@@ -37,18 +37,18 @@ def discover_posts(directory):
     Discover all posts in the given directory and return them as a dictionary.
     '''
     files = {}
+    years = os.listdir(directory)
 
-    for year in os.listdir(directory):
-        month_path = os.path.join(directory, year)
+    for year in years:
         year_posts = {}
-
-        for month in os.listdir(month_path):
-            post_path = os.path.join(month_path, month)
+        months = os.listdir(os.path.join(directory, year))
+        for month in months:
+            posts = os.listdir(os.path.join(directory, year, month))
             year_posts[month] = []
-            for post_file in os.listdir(post_path):
-                post_path = os.path.join(post_path, post_file)
-                frontmatter, content = parse_markdown(post_path)
-                frontmatter["path"] = post_path
+            for post_file in posts:
+                path = os.path.join(directory, year, month, post_file)
+                frontmatter, content = parse_markdown(path)
+                frontmatter["path"] = path
                 post = Post(frontmatter, content)
                 year_posts[month].append(post)
         files[year] = year_posts
@@ -60,6 +60,7 @@ def generate_and_save_index(files: List[Post]):
     '''
     Generate an index.json file with the given posts and save it.
     '''
+    files.sort(key=lambda x: x.date, reverse=True)
     with open("index.json", "w", encoding="utf-8") as f:
         json.dump([post.index_data()
                   for post in files], f, ensure_ascii=False, indent=2)
@@ -71,7 +72,7 @@ def generate_and_save_readme(files: dict):
     Generate a README.md file with the given posts and save it.
     '''
     readme_title = "# Blog"
-    readme_description = 'A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).'
+    readme_description = 'A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/blog), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).'
 
     readme_content = f'{readme_title}\n\n{readme_description}\n\n'
     years = sorted(files.keys(), reverse=True)
@@ -111,6 +112,18 @@ def recursive_unwrap_index(index, posts):
     return posts
 
 
+def publish_new_posts(posts, available_posts_flattened):
+    '''
+    Publish new posts to Medium and update the available posts list.
+    '''
+    for post in posts:
+        print(f"New post found: {post.title}")
+        post.publish()
+        # replace the post with the updated version
+        available_posts_flattened = [post if p == post else p for p in available_posts_flattened]
+    return available_posts_flattened
+
+
 def main():
     '''
     Main function to discover new posts, post them to Medium, and update the index and README.
@@ -120,18 +133,11 @@ def main():
 
     unpublished_posts = [post for post in available_posts_flattened if not post.published]
 
-    if len(unpublished_posts) == 0:
-        print("No new posts to post")
-        return
-
-    for post in unpublished_posts:
-        print(f"New post found: {post.title}")
-        post.publish()
-        # replace the post with the updated version
-        available_posts_flattened = [post if p == post else p for p in available_posts_flattened]
+    if len(unpublished_posts) > 0:
+        print(f"Found {len(unpublished_posts)} unpublished posts.")
+        available_posts_flattened = publish_new_posts(unpublished_posts, available_posts_flattened)
 
     generate_and_save_readme(available_posts)
     generate_and_save_index(available_posts_flattened)
-
 
 main()

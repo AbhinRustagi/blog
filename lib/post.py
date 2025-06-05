@@ -1,7 +1,6 @@
 from datetime import datetime
 
 import requests
-from slugify import slugify
 
 from .utils import (MEDIUM_BASE_URL, MEDIUM_TOKEN, MEDIUM_USER_ID,
                     PERSONAL_WEBSITE, PLATFORM_MEDIUM)
@@ -13,7 +12,6 @@ class Post:
     '''
 
     def __init__(self, metadata, content):
-        print(metadata)
         self.title = metadata.get("title")
         self.date = metadata.get("date", datetime.now())
         self.description = metadata.get("description", "")
@@ -141,4 +139,9 @@ class Post:
             "date": self.date.strftime("%Y-%m-%d"),
             "slug": self.slug,
             "path": self.path,
+            "canonical_url": self.canonical_url,
+            "tags": self.tags,
+            "reading_time": self.reading_time,
+            "platforms": self.platforms,
+            "published": self.published
         }
