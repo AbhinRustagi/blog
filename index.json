@@ -5,7 +5,11 @@
     "slug": "chatgpt-claude-derailed-semester",
     "path": "posts/2024/11/chatgpt-claude-derailed-semester.md",
     "canonical_url": "https://www.abhin.dev/blog/chatgpt-claude-derailed-semester",
-    "tags": ["ChatGPT", "Claude", "LLMs"],
+    "tags": [
+      "ChatGPT",
+      "Claude",
+      "LLMs"
+    ],
     "reading_time": 2,
     "platforms": [],
     "published": true
@@ -37,7 +41,10 @@
     "slug": "asking-the-right-questions",
     "path": "posts/2023/04/asking-the-right-questions.md",
     "canonical_url": "https://www.abhin.dev/blog/asking-the-right-questions",
-    "tags": ["Product Development", "Startup"],
+    "tags": [
+      "Product Development",
+      "Startup"
+    ],
     "reading_time": 2,
     "platforms": [
       {
@@ -52,7 +59,10 @@
     "slug": "custom-usetimer-hook-in-react",
     "path": "posts/2022/01/custom-usetimer-hook-in-react.md",
     "canonical_url": "https://www.abhin.dev/blog/custom-usetimer-hook-in-react",
-    "tags": ["React", "Frontend Development"],
+    "tags": [
+      "React",
+      "Frontend Development"
+    ],
     "reading_time": 2,
     "platforms": [
       {
@@ -67,7 +77,10 @@
     "slug": "reading-the-documentation-important",
     "path": "posts/2021/11/reading-the-documentation-important.md",
     "canonical_url": "https://www.abhin.dev/blog/reading-the-documentation-important",
-    "tags": ["Software Development", "Product"],
+    "tags": [
+      "Software Development",
+      "Product"
+    ],
     "reading_time": 4,
     "platforms": [
       {
