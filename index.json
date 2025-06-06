@@ -1,5 +1,19 @@
 [
   {
+    "title": "Test of Edit Capabilities",
+    "date": "2025-06-05",
+    "slug": "test-2",
+    "path": "posts/2025/06/test-2.md",
+    "canonical_url": "https://abhinrustagi.com/blog/test-2",
+    "tags": [
+      "test",
+      "something"
+    ],
+    "reading_time": 0,
+    "medium": null,
+    "published": true
+  },
+  {
     "title": "How I think ChatGPT & Claude might be derailing the next batch of academics",
     "date": "2024-11-15",
     "slug": "chatgpt-claude-derailed-semester",
