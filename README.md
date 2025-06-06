@@ -2,13 +2,6 @@
 
 A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/blog), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
 
-## 2025
-
-### June
-
-- Test of Edit Capabilities [[Markdown]](posts/2025/06/test-2.md)[[Website]](https://abhinrustagi.com/blog/test-2)
-
-
 ## 2024
 
 ### November
