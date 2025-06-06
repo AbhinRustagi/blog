@@ -6,7 +6,7 @@ tags:
   - test
   - something
 canonical_url: https://abhinrustagi.com/blog/test-2
-medium: true
+medium: 
 ---
 
 I added some content bro! That was quite weird?
