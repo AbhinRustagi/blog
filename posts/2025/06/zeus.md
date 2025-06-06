@@ -8,5 +8,4 @@ tags:
   - Next.js
   - Firebase
 canonical_url: https://www.abhin.dev/blog/zeus
-medium: 
 ---
