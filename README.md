@@ -2,6 +2,13 @@
 
 A blog about software development and other things. I use this repository as a source for my website [abhin.dev/](https://www.abhin.dev/blog), and for automatic deploys to [Medium](https://www.medium.com/@abhinr).
 
+## 2025
+
+### June
+
+- Developing Zeus [[Markdown]](posts/2025/06/zeus.md)[[Website]](https://www.abhin.dev/blog/zeus)
+
+
 ## 2024
 
 ### November
