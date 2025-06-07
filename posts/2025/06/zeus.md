@@ -1,14 +1,11 @@
 ---
 title: Developing Zeus
-date: 2025-06-06 07:24:02.822000+00:00
-canonical_url: https://www.abhin.dev/blog/zeus
-description: 
+date: 2025-06-06T07:24:02.822Z
 reading_time: 0
 slug: zeus
-published: True
-medium: None
 tags:
   - Zeus
   - Next.js
   - Firebase
+canonical_url: https://www.abhin.dev/blog/zeus
 ---
