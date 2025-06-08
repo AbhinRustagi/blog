@@ -1,5 +1,5 @@
 ---
-title: Developing Zeus
+title: Zeus
 date: 2025-06-07T06:11:00.261Z
 reading_time: 2
 slug: zeus
@@ -18,6 +18,7 @@ tags:
   - IRTL
 canonical_url: https://www.abhin.dev/blog/zeus
 ---
+
 
 I recently decided to build a personal project that I can use personally. I call it Zeus. I intend it to overlook and help manage a lot of small personal goals or tasks I want to complete online. 
 
