@@ -8,9 +8,9 @@ tags:
   - Firebase
   - NextJS
   - Github Actions
-  - Octokit
+  - CMS
 canonical_url: https://www.abhin.dev/blog/zeus
-medium: 
 ---
+
 
 Testing from mobile.
