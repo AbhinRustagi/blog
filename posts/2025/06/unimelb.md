@@ -12,7 +12,7 @@ canonical_url: https://www.abhin.dev/blog/unimelb
 medium: 
 ---
 
-Why did I do this? Well, my time at Openhouse rendered me insane working from home. 
+I came to Melbourne on 18 July 2023 and it's been some ride since then. Why? 
 
 A light intro that talks about why you decided to pursue a Master’s, why Melbourne, and why UniMelb.
 
