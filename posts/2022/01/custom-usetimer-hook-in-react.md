@@ -2,7 +2,7 @@
 title: Develop a Custom useTimer Hook in React
 date: 2022-01-23T13:00:00.000Z
 canonical_url: https://www.abhin.dev/blog/custom-usetimer-hook-in-react
-description: Ever struggled with JavaScript's setInterval causing chaos in your React apps? I built a clean useTimer hook that handles countdown timers properly with start/stop controls and automatic cleanup.
+description: I built a clean useTimer hook that handles countdown timers properly with start/stop controls and automatic cleanup.
 reading_time: 2
 slug: custom-usetimer-hook-in-react
 published: True

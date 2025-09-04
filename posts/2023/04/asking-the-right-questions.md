@@ -2,7 +2,7 @@
 title: Asking the right questions — an underrated soft skill
 date: 2023-04-30T01:00:00.000Z
 canonical_url: https://www.abhin.dev/blog/asking-the-right-questions
-description: Ever wonder why some people always seem to get better answers? Turns out it's not about being smarter, it's about asking the right questions in the first place. A quick reflection on how this underrated skill can save you tons of time and frustration, whether you're debugging code or just trying to get stuff done.
+description: Turns out for getting better answers it's not about being smarter, it's about asking the right questions in the first place. A quick reflection on how this underrated skill can save you tons of time and frustration, whether you're debugging code or just trying to get stuff done.
 reading_time: 2
 slug: asking-the-right-questions
 published: True
