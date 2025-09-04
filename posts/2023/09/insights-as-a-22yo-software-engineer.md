@@ -2,7 +2,7 @@
 title: Insights as a 22yo Software Engineer
 date: 2023-09-26T02:00:00.000Z
 canonical_url: https://www.abhin.dev/blog/insights-as-a-22yo-software-engineer
-description:
+description: A young developer's honest take on navigating the tech world, from overcoming imposter syndrome to building real products at a startup.
 reading_time: 5
 slug: insights-as-a-22yo-software-engineer
 published: True

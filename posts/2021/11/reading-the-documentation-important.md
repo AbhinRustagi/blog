@@ -2,7 +2,7 @@
 title: Why is reading the documentation so important?
 date: 2021-11-17T03:31:00.000Z
 canonical_url: https://www.abhin.dev/blog/reading-the-documentation-important
-description:
+description: Ever find yourself stuck on Stack Overflow looking for answers that were literally on page 3 of the docs? This post explores why RTFM (Reading the F*cking Manual) might be the best advice you'll get as a developer.
 reading_time: 4
 slug: reading-the-documentation-important
 published: True

@@ -5,7 +5,6 @@ from typing import List
 import yaml
 
 from lib import MONTHS, Post
-from lib.utils import PLATFORM_MEDIUM
 
 
 def parse_markdown(file_path):
