@@ -8,12 +8,17 @@ from .utils import CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, CLOUDINARY_CLOUD_N
 
 
 def configure_cloudinary():
-    """Configure cloudinary with credentials"""
+    """Configure cloudinary with credentials. Returns False if credentials are missing."""
+    if not all([CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET]):
+        print("Cloudinary credentials not configured, skipping image upload")
+        return False
+
     cloudinary.config(
         cloud_name=CLOUDINARY_CLOUD_NAME,
         api_key=CLOUDINARY_API_KEY,
         api_secret=CLOUDINARY_API_SECRET
     )
+    return True
 
 
 def extract_local_images(content):
@@ -51,7 +56,8 @@ def delete_local_image(local_path):
 
 def process_images_in_posts(posts):
     """Process all images in all posts - upload to Cloudinary and update content"""
-    configure_cloudinary()
+    if not configure_cloudinary():
+        return
 
     images_to_upload = set()
     for post in posts:
