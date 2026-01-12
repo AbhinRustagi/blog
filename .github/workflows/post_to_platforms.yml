@@ -29,6 +29,12 @@ jobs:
 
       - name: Run script
         run: python main.py
+        env:
+          MEDIUM_USER_ID: ${{ secrets.MEDIUM_USER_ID }}
+          MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5

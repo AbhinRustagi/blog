@@ -1,5 +1,6 @@
 certifi==2024.8.30
 charset-normalizer==3.3.2
+cloudinary
 idna==3.10
 Markdown==3.7
 python-slugify==8.0.4

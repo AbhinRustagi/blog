@@ -4,7 +4,7 @@ from typing import List
 
 import yaml
 
-from lib import MONTHS, Post
+from lib import MONTHS, Post, process_images_in_posts
 
 
 def parse_markdown(file_path):
@@ -128,6 +128,9 @@ def main():
     '''
     available_posts = discover_posts("posts")
     available_posts_flattened = recursive_unwrap_index(available_posts, [])
+
+    # Process images: upload to Cloudinary and update post content
+    process_images_in_posts(available_posts_flattened)
 
     unpublished_posts = [post for post in available_posts_flattened if not post.published]
 
