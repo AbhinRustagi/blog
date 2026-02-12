@@ -1,15 +1,13 @@
 ---
 title: How I think ChatGPT & Claude might be derailing the next batch of academics
-date: 2024-11-15 00:00:00+00:00
-canonical_url: https://www.abhin.dev/blog/chatgpt-claude-derailed-semester
-description: Watching classmates breeze through assignments with ChatGPT while learning nothing is honestly kind of depressing. There's a difference between using AI as a tutor versus letting it do all your thinking for you.
+date: 2024-11-15T00:00:00.000Z
 reading_time: 2
 slug: chatgpt-claude-derailed-semester
-published: True
 tags:
   - ChatGPT
   - Claude
   - LLMs
+canonical_url: https://www.abhin.dev/blog/chatgpt-claude-derailed-semester
 ---
 
 I started my Masters of IT at the University of Melbourne in July 2023. Every semester I see more of it being used to rush through assignments. While I also use its services when I desperately need to, it comes at a cost.
