@@ -11,6 +11,7 @@
         "Claude",
         "LLMs"
       ],
+      "path": "posts/2024/11/chatgpt-claude-derailed-semester.md",
       "reading_time": 2,
       "published": true
     },
@@ -27,6 +28,7 @@
         "Startups",
         "Software Development"
       ],
+      "path": "posts/2023/09/insights-as-a-22yo-software-engineer.md",
       "reading_time": 5,
       "medium": "https://medium.com/design-bootcamp/insights-as-a-22yo-software-engineer-d3b8a79c585b",
       "published": true
@@ -41,6 +43,7 @@
         "Product Development",
         "Startup"
       ],
+      "path": "posts/2023/04/asking-the-right-questions.md",
       "reading_time": 2,
       "medium": "https://medium.com/design-bootcamp/asking-the-right-questions-an-underrated-soft-skill-62bc5ca80013",
       "published": true
@@ -55,6 +58,7 @@
         "React",
         "Frontend Development"
       ],
+      "path": "posts/2022/01/custom-usetimer-hook-in-react.md",
       "reading_time": 2,
       "medium": "https://javascript.plainenglish.io/developing-a-custom-usetimer-hook-in-react-18585ea3d24",
       "published": true
@@ -69,6 +73,7 @@
         "Software Development",
         "Product"
       ],
+      "path": "posts/2021/11/reading-the-documentation-important.md",
       "reading_time": 4,
       "medium": "https://javascript.plainenglish.io/reading-the-documentation-important-5cf50bab0c9f",
       "published": true
