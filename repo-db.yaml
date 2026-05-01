@@ -1,0 +1,19 @@
+name: blog
+
+types:
+  post:
+    content: posts/**/*.md
+    format: markdown-frontmatter
+    schema: structures/post.schema.json
+    projection: structures/post.index.json
+    key: slug
+    sort:
+      field: date
+      order: desc
+
+llms: false
+update_readme: false
+
+rules:
+  unknown-fields: warn
+  projection-missing: warn

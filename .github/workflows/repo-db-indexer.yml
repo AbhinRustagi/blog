@@ -1,0 +1,26 @@
+name: repo-db-indexer
+
+on:
+  push:
+    branches:
+      - try-repo-db-indexer
+      - main
+    paths:
+      - 'posts/**'
+      - 'structures/**'
+      - 'repo-db.yaml'
+      - '.github/workflows/repo-db-indexer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: abhinrustagi/repo-db-indexer@v0.1.0
+        with:
+          config-path: ./repo-db.yaml
+          commit: 'true'
