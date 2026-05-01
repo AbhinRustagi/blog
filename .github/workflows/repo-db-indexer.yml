@@ -34,7 +34,7 @@ jobs:
                   field: date
                   order: desc
             llms: false
-            update_readme: false
+            update_readme: true
             rules:
               unknown-fields: warn
               projection-missing: warn
