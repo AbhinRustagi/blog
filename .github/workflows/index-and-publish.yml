@@ -4,14 +4,13 @@ on:
   push:
     branches:
       - main
-      - try-repo-db-indexer
     paths:
-      - 'posts/**'
-      - 'structures/**'
-      - 'main.py'
-      - 'lib/**'
-      - 'requirements.txt'
-      - '.github/workflows/index-and-publish.yml'
+      - "posts/**"
+      - "structures/**"
+      - "main.py"
+      - "lib/**"
+      - "requirements.txt"
+      - ".github/workflows/index-and-publish.yml"
   workflow_dispatch:
 
 permissions:
@@ -31,7 +30,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Python dependencies
         run: |
@@ -67,9 +66,9 @@ jobs:
             rules:
               unknown-fields: warn
               projection-missing: warn
-          commit: 'false'
+          commit: "false"
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'Refresh index and publish new posts'
+          commit_message: "Refresh index and publish new posts"
