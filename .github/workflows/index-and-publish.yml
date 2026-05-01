@@ -52,7 +52,7 @@ jobs:
           config: |
             name: blog
             types:
-              post:
+              posts:
                 content: posts/**/*.md
                 format: markdown-frontmatter
                 schema: structures/post.schema.json
